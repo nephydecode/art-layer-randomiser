@@ -4,7 +4,7 @@ import random
 import json
 import os
 
-TOTAL_IMAGES = 50
+TOTAL_IMAGES = 10
 
 ## TRAITS
 
@@ -170,18 +170,18 @@ for item in all_images:
     file_name = str(item["tokenId"]) + ".png"
     rgb_im.save("./generated/" + file_name)
 
-    collage = Image.new("RGBA", (5000,2500), color=(255,255,255,255))
-    max = 50
-    l = list(range(0,max))
-    random.shuffle(l)
-    c=0
+    # collage = Image.new("RGBA", (5000,2500), color=(255,255,255,255))
+    # max = 50
+    # l = list(range(0,max))
+    # random.shuffle(l)
+    # c=0
 
-for i in range(0,5000,500):
-    for j in range(0,2500,500):
-        file = "./generated/"+str(l[c])+".png"
-        photo = Image.open(file).convert("RGBA")
-        photo = photo.resize((500,500))
-        collage.paste(photo, (i,j))
-        c+=1
+# for i in range(0,5000,500):
+#     for j in range(0,2500,500):
+#         file = "./generated/"+str(l[c])+".png"
+#         photo = Image.open(file).convert("RGBA")
+#         photo = photo.resize((500,500))
+#         collage.paste(photo, (i,j))
+#         c+=1
 
-collage.save("./collage/collage.png")
+# collage.save("./collage/collage.png")
