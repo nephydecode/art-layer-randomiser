@@ -17,9 +17,9 @@ body = ["White", "Tanned"]
 body_weights = [50,50]
 body_files = {"White" : "body_white", "Tanned" : "body_tanned"}
 
-white_arm = ["White Dagger", "White Fist", "None"]
-white_arm_weights = [5,20, 75]
-white_arm_files = {"White Dagger" : "white_dagger", "White Fist" : "white_fist", "None": ""}
+arm = ["Dagger", "None"]
+arm_weights = [15, 85]
+arm_files = {"Dagger" : "dagger", "None" : ""}
 
 tanned_arm = ["Tanned Dagger", "Tanned Fist", "None"]
 tanned_arm_weights = [5,20, 75]
@@ -78,10 +78,7 @@ def create_new_image():
 
     new_image ["Background"] = random.choices(background, background_weights)[0]
     new_image ["Body"] = random.choices(body, body_weights)[0]
-    if new_image ["Body"] == "White":
-        new_image ["Arm"] = random.choices(white_arm, white_arm_weights)[0]
-    elif new_image ["Body"] == "Tanned":
-        new_image ["Arm"] = random.choices(tanned_arm, tanned_arm_weights)[0]
+    new_image ["Arm"] = random.choices(arm, arm_weights)[0]
     new_image ["Background"] = random.choices(background, background_weights)[0]
     new_image ["EarAccessories"] = random.choices(ear_acc, ear_acc_weights)[0]
     new_image ["Mouth"] = random.choices(mouth, mouth_weights)[0]
